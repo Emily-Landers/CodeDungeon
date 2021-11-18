@@ -33,31 +33,20 @@ function Questions(question, answers, correctAnswer){
 
   let question10 = new Questions('What symbol does an array use?":', ["()", "{}", "[]", "<>"], 2,)
   
-
-//   Questions.prototype.findAnswer = function(){
-//     for(let i = 0; i < this.answers.length; i++){
-//     if(this.answer[i] === this.correctAnswer){
-//         console.log('Thats Right!')
-//     } else {
-//       lives -= 1
-//       console.log(lives)
-//     }
-//   }
-// }
-//diff id if 
-
-
 Questions.prototype.render = function(){
     let ask = document.getElementById('quest-container')
     let quest = document.createElement('div')
     quest.textContent = this.question;
     ask.appendChild(quest);
+    ask.addEventListener('click' , handleClick);
+    let correctIndex = this.correctAnswer
     for (let i = 0; i < this.answers.length; i++){
         let ans = document.createElement('li')
         ans.textContent = this.answers[i]
         quest.appendChild(ans)
-        ask.addEventListener('click' , handleClick);
-        
+        if (i === correctIndex){
+          ans.setAttribute('id', 'correct')
+        }
         } 
         
     }
@@ -66,63 +55,20 @@ Questions.prototype.render = function(){
 
 
 function handleClick(event) {
-  // if(event.target.id === 'correct'){ compare click to correct answer
+  console.log("target id" , event.target.id)
+  if(event.target.id === 'correct'){ 
     canMove = true;
-    stopEventListeners();
+
+  
   } else if (event.target.id !== 'correct') {
     canMove = false;
     lives -= 1;
     console.log(lives)
     console.log(event.target.id)
   } else if (lives < 1){
-    stopEventListeners();
+  
   }
 }
-// function attachEventListeners() {
-    
-
-// }
-
-function stopEventListeners() {
-    const container = document.getElementById('ansElem');
-    container.removeEventListener('click', this.findAnswer);
-}
-
-console.log(question1.answers)
-// function handleClick(event) {
-// let answer1 = document.getElementById('ansElem')
-// answer1.addEventListener
-
-  
-//   function showQuestion(q) {
-//     let questionDiv = document.getElementById("question");
-//     questionDiv.textContent = q.question;
-//     let answers = document.querySelectorAll(".answers");
-//   console.log(q);
-
-//     answers.forEach(function (element, index) {
-//         element.setAttribute('id',`${q.answers[index]}`)
-//       element.textContent = q.answers[index];
-  
-//       element.addEventListener("click", function checkAnswer (e) {
-//           console.log("target id " , e.target.id)
-//           console.log("correctanswer " , q.correctAnswer)
-//           console.log(e.target.text)
-//           console.log(correctAnswers.includes(e.target.id))
-//         if (correctAnswers.includes(e.target.id)) {
-//           canMove = true;
-//           document.getElementById("knight").hidden = true;
-//           // console.log("Correct Answer!");
-//         } else {
-//           console.log("Wrong Answer!");
-//           lives -= 1;
-//           livesCheck();
-//         //   console.log(lives);
-//         }
-//       });
-      
-//     });
-//   }
 
 function detectKey(e) {
   if (canMove) {
@@ -222,3 +168,8 @@ function posPrompt() {
     canMove = false;
   }
 }
+function setUp(){
+  let ask = document.getElementById('quest-container');
+  ask.addEventListener('click' , handleClick);
+}
+setUp();
