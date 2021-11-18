@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html>
+
+  <!-- onLoad="window.scroll(0,0) -->
+
+  <head>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Road+Rage&display=swap"
+      rel="stylesheet"
+    />
+    <title>Code Dungeon</title>
+  </head>
+
+  <body id="hotbod" onLoad="window.scroll(0,0)">
+   
+      <div id="gameover" hidden>
+      <img src="img/gameover.png" id="gameover">
+      <button id="restart" onClick="window.location.reload();">Try Again?</button> 
+      </div>
+
+  <body id="hotbod">
+    <div id="gameover" hidden>
+      <img src="img/gameover.png" id="gameover" />
+      <button id="restart" onClick="window.location.reload();">
+        Try Again?
+      </button>
+    </div>
+
+    <div class="container">
+      <input
+        type="button"
+        value="Enter the Dungeon"
+        onclick="change()"
+        id="startButton"
+      />
+    </div>
+    <div id="lives">
+      <img src="img/heart.png" id="heart1" style="width: 50px; height: 50px" />
+      <img src="img/heart.png" id="heart2" style="width: 50px; height: 50px" />
+      <img src="img/heart.png" id="heart3" style="width: 50px; height: 50px" />
+      <img src="img/heart.png" id="heart4" style="width: 50px; height: 50px" />
+    </div>
+
+    <!-- <iframe width="1px" height="1px" src="https://www.youtube.com/embed/a0Av2XNPd_g?&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+    <!-- <button type="submit" name="startGame" id="start">
+            Enter the Dungeon
+        </button> -->
+    <!-- <h3>Use the keyboard to manage your character.</h3>
+        <p>
+        <br /> <b>ARROWS:</b>
+        <br /> LEFT & RIGHT to move forward or backward
+        </p> -->
+    <div id="game">
+        <div class="wrapper">
+            <div class="flame-wrapper">
+                <div class="flame red"></div>
+                <div class="flame orange"></div>
+                <div class="flame gold"></div>
+                <div class="flame white"></div>
+                <div class="base blue"></div>
+                <div class="base black"></div>
+            </div>
+        </div>
+        <div class="wrapper1">
+            <div class="flame-wrapper">
+                <div class="flame red"></div>
+                <div class="flame orange"></div>
+                <div class="flame gold"></div>
+                <div class="flame white"></div>
+                <div class="base blue"></div>
+                <div class="base black"></div>
+            </div>
+        </div>
+        <div class="wrapper2">
+            <div class="flame-wrapper">
+                <div class="flame red"></div>
+                <div class="flame orange"></div>
+                <div class="flame gold"></div>
+                <div class="flame white"></div>
+                <div class="base blue"></div>
+                <div class="base black"></div>
+            </div>
+        </div>
+        <div class="wrapper3">
+            <div class="flame-wrapper">
+                <div class="flame red"></div>
+                <div class="flame orange"></div>
+                <div class="flame gold"></div>
+                <div class="flame white"></div>
+                <div class="base blue"></div>
+                <div class="base black"></div>
+            </div>
+        </div>
+        <div class="wrapper4">
+            <div class="flame-wrapper">
+                <div class="flame red"></div>
+                <div class="flame orange"></div>
+                <div class="flame gold"></div>
+                <div class="flame white"></div>
+                <div class="base blue"></div>
+                <div class="base black"></div>
+            </div>
+        </div>
+        <div class="wrapper5">
+            <div class="flame-wrapper">
+                <div class="flame red"></div>
+                <div class="flame orange"></div>
+                <div class="flame gold"></div>
+                <div class="flame white"></div>
+                <div class="base blue"></div>
+                <div class="base black"></div>
+            </div>
+        </div>
+        <div class="wrapper6">
+            <div class="flame-wrapper">
+                <div class="flame red"></div>
+                <div class="flame orange"></div>
+                <div class="flame gold"></div>
+                <div class="flame white"></div>
+                <div class="base blue"></div>
+                <div class="base black"></div>
+            </div>
+        </div>
+        <div class="wrapper7">
+            <div class="flame-wrapper">
+                <div class="flame red"></div>
+                <div class="flame orange"></div>
+                <div class="flame gold"></div>
+                <div class="flame white"></div>
+                <div class="base blue"></div>
+                <div class="base black"></div>
+            </div>
+        </div>
+        <div class="wrapper8">
+            <div class="flame-wrapper">
+                <div class="flame red"></div>
+                <div class="flame orange"></div>
+                <div class="flame gold"></div>
+                <div class="flame white"></div>
+                <div class="base blue"></div>
+                <div class="base black"></div>
+            </div>
+        </div>
+        <div class="wrapper9">
+            <div class="flame-wrapper">
+                <div class="flame red"></div>
+                <div class="flame orange"></div>
+                <div class="flame gold"></div>
+                <div class="flame white"></div>
+                <div class="base blue"></div>
+                <div class="base black"></div>
+            </div>
+        </div>
+        <div class="wrapper10">
+            <div class="flame-wrapper">
+                <div class="flame red"></div>
+                <div class="flame orange"></div>
+                <div class="flame gold"></div>
+                <div class="flame white"></div>
+                <div class="base blue"></div>
+                <div class="base black"></div>
+            </div>
+        </div>
+        <div class="wrapper11">
+            <div class="flame-wrapper">
+                <div class="flame red"></div>
+                <div class="flame orange"></div>
+                <div class="flame gold"></div>
+                <div class="flame white"></div>
+                <div class="base blue"></div>
+                <div class="base black"></div>
+            </div>
+        </div>
+        <div class="wrapper12">
+            <div class="flame-wrapper">
+                <div class="flame red"></div>
+                <div class="flame orange"></div>
+                <div class="flame gold"></div>
+                <div class="flame white"></div>
+                <div class="base blue"></div>
+                <div class="base black"></div>
+            </div>
+        </div>
+        <div class="wrapper13">
+            <div class="flame-wrapper">
+                <div class="flame red"></div>
+                <div class="flame orange"></div>
+                <div class="flame gold"></div>
+                <div class="flame white"></div>
+                <div class="base blue"></div>
+                <div class="base black"></div>
+            </div>
+        </div>
+      <div id="character">
+        <div id="spooky">
+          <img
+            src="img/ghost.png"
+            id="ghost"
+            style="width: 300px; height: 200px"
+          />
+        </div>
+      </div>
+      <div id="knight" hidden>
+        <div id="quest-container"> 
+        <img
+          src="img/shovel.png"
+          alt="knight"
+          style="width: 300px; height: 200px"
+        />
+      </div>
+      <script src="app.js" async defer></script>
+      <script src="ghost.js" async defer></script>
+      
+    </div>
+  </body>
+</html>
