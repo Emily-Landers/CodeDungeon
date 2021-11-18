@@ -3,8 +3,7 @@ let canMove = true;
 let keyPress = 0;
 let lives = 4;
 document.onkeydown = detectKey;
-// let correctAnswers = ['Declaration statements', "Function/Method", "if(a!==null)", '=','let','HTML','net','False','Both',"Not-a-Number","[]" ]
-// addEventListeners();
+
 function Questions(question, answers, correctAnswer){
     this.question = question
     this.answers = answers
@@ -53,20 +52,22 @@ Questions.prototype.render = function(){
    
 
 
-
+//move ask
 function handleClick(event) {
+  let ask = document.getElementById('quest-container')
+
   console.log("target id" , event.target.id)
   if(event.target.id === 'correct'){ 
     canMove = true;
-
-  
+    ask.innerHTML = ""
   } else if (event.target.id !== 'correct') {
     canMove = false;
     lives -= 1;
     console.log(lives)
     console.log(event.target.id)
   } else if (lives < 1){
-  
+    ask.innerHTML = ""
+    document.getElementById("knight").hidden = true;
   }
 }
 
@@ -82,9 +83,6 @@ function detectKey(e) {
       document.getElementById("spooky").style.marginLeft = posLeft - 38 + "px";
       keyPress++;
     }
-
-    // console.log(keyPress);
-
     posPrompt();
   }
 }
@@ -108,7 +106,6 @@ function livesCheck() {
     } else if (lives === 0) {
       hearts[3].remove();
       document.getElementById("gameover").hidden = false;
-      // document.getElementById('restart').style.display = 'inline-block';
     } else {
       console.log("nice");
     }
@@ -120,7 +117,7 @@ function posPrompt() {
   if (keyPress === 21) {
     console.log("working");
     question1.render();
-    // hotbod.style.overflow = "hidden";
+    hotbod.style.overflow = "hidden";
     document.getElementById("knight").hidden = false;
     canMove = false;
   } else if (keyPress > 21) {
@@ -146,7 +143,7 @@ function posPrompt() {
   if (keyPress === 98) {
     console.log("working");
     question3.render();
-    // hotbod.style.overflow = "hidden";
+    hotbod.style.overflow = "hidden";
     document.getElementById("knight").hidden = false;
     document.getElementById("knight").style.marginLeft = 2820 + 'px';
     canMove = false;
@@ -154,7 +151,7 @@ function posPrompt() {
   if (keyPress === 147) {
     console.log("working");
     question4.render();
-    // hotbod.style.overflow = "hidden";
+    hotbod.style.overflow = "hidden";
     document.getElementById("knight").hidden = false;
     document.getElementById("knight").style.marginLeft =  + 4794 + 'px';
     canMove = false;
@@ -162,7 +159,7 @@ function posPrompt() {
   if (keyPress === 191) {
     console.log("working");
     question5.render();
-    // hotbod.style.overflow = "hidden";
+    hotbod.style.overflow = "hidden";
     document.getElementById("knight").hidden = false;
     document.getElementById("knight").style.marginLeft =  + 6466 + 'px';
     canMove = false;
